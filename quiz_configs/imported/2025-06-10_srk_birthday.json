@@ -1,0 +1,109 @@
+{
+  "date": "2025-06-10",
+  "category": "Actors",
+  "title": "Shah Rukh Khan Birthday Celebration",
+  "description": "Celebrating the King of Bollywood with questions about his iconic career",
+  "background_image": "https://static.toiimg.com/thumb/msid-119610150,imgsize-82628,width-400,resizemode-4/119610150.jpg",
+  "questions": [
+    {
+      "question": "What was Shah Rukh Khan's debut Bollywood film?",
+      "options": [
+        "Deewana",
+        "Fauji", 
+        "Baazigar",
+        "Darr"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In which year was 'Dilwale Dulhania Le Jayenge' released?",
+      "options": [
+        "1994",
+        "1995",
+        "1996", 
+        "1997"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which SRK film won the National Film Award for Best Popular Film?",
+      "options": [
+        "My Name is Khan",
+        "Chak De! India",
+        "Swades",
+        "All of the above"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "What is the name of Shah Rukh Khan's production company?",
+      "options": [
+        "Yash Raj Films",
+        "Red Chillies Entertainment",
+        "Dharma Productions",
+        "Excel Entertainment"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Kuch Kuch Hota Hai', what was SRK's character name?",
+      "options": [
+        "Rahul",
+        "Raj",
+        "Rohit",
+        "Ravi"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which cricket team does Shah Rukh Khan own in IPL?",
+      "options": [
+        "Mumbai Indians",
+        "Chennai Super Kings",
+        "Kolkata Knight Riders",
+        "Royal Challengers Bangalore"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "In which film did SRK play a character with autism?",
+      "options": [
+        "Taare Zameen Par",
+        "My Name is Khan",
+        "Dear Zindagi",
+        "Zero"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "What is Shah Rukh Khan's famous dialogue from 'Chennai Express'?",
+      "options": [
+        "Don ko pakadna mushkil hi nahi, namumkin hai",
+        "Rahul, naam toh suna hoga",
+        "Don't underestimate the power of a common man",
+        "Aaj mere paas bangla hai, gaadi hai, bank balance hai"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which Hollywood actor has SRK been compared to for his romantic roles?",
+      "options": [
+        "Tom Cruise",
+        "Leonardo DiCaprio", 
+        "Hugh Grant",
+        "Brad Pitt"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "In 'Om Shanti Om', SRK played a double role. What were the character names?",
+      "options": [
+        "Om and Arjun",
+        "Om Prakash and Om Kapoor",
+        "Raj and Rahul",
+        "Karan and Arjun"
+      ],
+      "correct_answer": 1
+    }
+  ]
+}

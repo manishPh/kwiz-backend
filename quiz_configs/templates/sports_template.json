@@ -1,0 +1,49 @@
+{
+  "date": "2025-06-15",
+  "category": "Sports",
+  "title": "Sports Special Quiz",
+  "description": "Sports meets entertainment in this exciting quiz",
+  "background_image": "https://example.com/sports-background.jpg",
+  "questions": [
+    {
+      "question": "Which Bollywood film was based on cricket?",
+      "options": [
+        "Lagaan",
+        "Dangal",
+        "Bhaag Milkha Bhaag",
+        "Mary Kom"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Who played M.S. Dhoni in his biopic?",
+      "options": [
+        "Ranveer Singh",
+        "Sushant Singh Rajput",
+        "Ranbir Kapoor",
+        "Varun Dhawan"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which sport was featured in the movie 'Dangal'?",
+      "options": [
+        "Boxing",
+        "Wrestling",
+        "Kabaddi",
+        "Hockey"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Add your sports-related questions here...",
+      "options": [
+        "Follow the same format",
+        "Mix Bollywood and sports",
+        "Keep it engaging",
+        "Target current events"
+      ],
+      "correct_answer": 0
+    }
+  ]
+}

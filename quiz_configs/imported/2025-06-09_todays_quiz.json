@@ -1,0 +1,109 @@
+{
+  "date": "2025-06-09",
+  "category": "Films",
+  "title": "Bollywood Blockbusters Quiz",
+  "description": "Test your knowledge about iconic Bollywood movies and their memorable moments",
+  "background_image": "https://static.toiimg.com/thumb/msid-119610150,imgsize-82628,width-400,resizemode-4/119610150.jpg",
+  "questions": [
+    {
+      "question": "Which movie features the famous dialogue 'Mogambo khush hua'?",
+      "options": [
+        "Mr. India",
+        "Sholay",
+        "Amar Akbar Anthony",
+        "Don"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "In which year was the movie 'Lagaan' released?",
+      "options": [
+        "2000",
+        "2001",
+        "2002",
+        "2003"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Who directed the movie 'Zindagi Na Milegi Dobara'?",
+      "options": [
+        "Farhan Akhtar",
+        "Zoya Akhtar",
+        "Karan Johar",
+        "Imtiaz Ali"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which actress played the lead role in 'Queen'?",
+      "options": [
+        "Deepika Padukone",
+        "Priyanka Chopra",
+        "Kangana Ranaut",
+        "Alia Bhatt"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "In 'Dangal', Aamir Khan played the role of which real-life wrestler?",
+      "options": [
+        "Sushil Kumar",
+        "Yogeshwar Dutt",
+        "Mahavir Singh Phogat",
+        "Bajrang Punia"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which movie won the National Film Award for Best Feature Film in 2023?",
+      "options": [
+        "RRR",
+        "Gangubai Kathiawadi",
+        "The Kashmir Files",
+        "Brahmastra"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Who composed the music for 'Gully Boy'?",
+      "options": [
+        "A.R. Rahman",
+        "Shankar-Ehsaan-Loy",
+        "Divine and Naezy",
+        "Vishal-Shekhar"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "In which movie did Ranbir Kapoor play a character named Jordan?",
+      "options": [
+        "Rockstar",
+        "Tamasha",
+        "Yeh Jawaani Hai Deewani",
+        "Ae Dil Hai Mushkil"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which film marked Alia Bhatt's debut as an actress?",
+      "options": [
+        "Highway",
+        "Student of the Year",
+        "2 States",
+        "Humpty Sharma Ki Dulhania"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Who directed the movie 'Andhadhun'?",
+      "options": [
+        "Anurag Kashyap",
+        "Sriram Raghavan",
+        "Vishal Bhardwaj",
+        "Imtiaz Ali"
+      ],
+      "correct_answer": 1
+    }
+  ]
+}
