@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwiz Creator - Easy Quiz Builder</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { color: #e91e63; text-align: center; margin-bottom: 30px; font-size: 2.5em; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
+        input, select, textarea { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #e91e63; }
+        .question-card { background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 12px; padding: 20px; margin-bottom: 20px; position: relative; }
+        .question-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .question-number { background: #e91e63; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; }
+        .remove-question { background: #dc3545; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .option-group { display: flex; align-items: center; gap: 10px; }
+        .option-group input[type="radio"] { width: auto; }
+        .option-group input[type="text"] { flex: 1; }
+        .btn { padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .btn-primary { background: #e91e63; color: white; }
+        .btn-primary:hover { background: #c2185b; transform: translateY(-2px); }
+        .btn-secondary { background: #6c757d; color: white; }
+        .btn-success { background: #28a745; color: white; }
+        .btn-success:hover { background: #218838; }
+        .actions { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
+        .preview { background: #e3f2fd; border: 2px solid #2196f3; border-radius: 8px; padding: 20px; margin-top: 20px; }
+        .preview h3 { color: #1976d2; margin-bottom: 15px; }
+        .preview pre { background: #f5f5f5; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 14px; }
+        .help-text { font-size: 14px; color: #666; margin-top: 5px; }
+        @media (max-width: 768px) {
+            .container { padding: 20px; margin: 10px; }
+            .options-grid { grid-template-columns: 1fr; }
+            .actions { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Kwiz Creator</h1>
+        
+        <form id="quizForm">
+            <!-- Quiz Metadata -->
+            <div class="form-group">
+                <label for="date">Quiz Date *</label>
+                <input type="date" id="date" required>
+                <div class="help-text">When should this quiz go live?</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Category *</label>
+                <select id="category" required>
+                    <option value="">Select category...</option>
+                    <option value="Films">Films</option>
+                    <option value="Actors">Actors</option>
+                    <option value="Actresses">Actresses</option>
+                    <option value="Music">Music</option>
+                    <option value="Sports">Sports</option>
+                    <option value="General">General</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="title">Quiz Title *</label>
+                <input type="text" id="title" placeholder="e.g., Shah Rukh Khan Birthday Special" required maxlength="200">
+                <div class="help-text">Keep it catchy and under 200 characters</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="3" placeholder="Brief description of the quiz theme"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="backgroundImage">Background Image URL</label>
+                <input type="url" id="backgroundImage" placeholder="https://example.com/image.jpg">
+                <div class="help-text">Optional: URL for contextual background image</div>
+            </div>
+            
+            <!-- Questions Section -->
+            <h2 style="margin: 30px 0 20px 0; color: #333;">Questions</h2>
+            <div id="questionsContainer"></div>
+            
+            <div class="actions">
+                <button type="button" class="btn btn-secondary" onclick="addQuestion()">+ Add Question</button>
+                <button type="button" class="btn btn-primary" onclick="generateJSON()">📄 Generate JSON</button>
+                <button type="button" class="btn btn-success" onclick="downloadJSON()">💾 Download Quiz</button>
+            </div>
+        </form>
+        
+        <!-- JSON Preview -->
+        <div id="jsonPreview" class="preview" style="display: none;">
+            <h3>📋 Generated JSON (copy this to your .json file)</h3>
+            <pre id="jsonOutput"></pre>
+        </div>
+    </div>
+
+    <script>
+        let questionCount = 0;
+
+        function addQuestion() {
+            questionCount++;
+            const container = document.getElementById('questionsContainer');
+            
+            const questionCard = document.createElement('div');
+            questionCard.className = 'question-card';
+            questionCard.innerHTML = `
+                <div class="question-header">
+                    <span class="question-number">Question ${questionCount}</span>
+                    <button type="button" class="remove-question" onclick="removeQuestion(this)">Remove</button>
+                </div>
+                
+                <div class="form-group">
+                    <label>Question Text *</label>
+                    <input type="text" class="question-text" placeholder="Enter your question here..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Answer Options *</label>
+                    <div class="options-grid">
+                        <div class="option-group">
+                            <input type="radio" name="correct_${questionCount}" value="0" required>
+                            <input type="text" class="option" placeholder="Option A" required>
+                        </div>
+                        <div class="option-group">
+                            <input type="radio" name="correct_${questionCount}" value="1">
+                            <input type="text" class="option" placeholder="Option B" required>
+                        </div>
+                        <div class="option-group">
+                            <input type="radio" name="correct_${questionCount}" value="2">
+                            <input type="text" class="option" placeholder="Option C" required>
+                        </div>
+                        <div class="option-group">
+                            <input type="radio" name="correct_${questionCount}" value="3">
+                            <input type="text" class="option" placeholder="Option D" required>
+                        </div>
+                    </div>
+                    <div class="help-text">Select the radio button next to the correct answer</div>
+                </div>
+            `;
+            
+            container.appendChild(questionCard);
+        }
+
+        function removeQuestion(button) {
+            button.closest('.question-card').remove();
+        }
+
+        function generateJSON() {
+            const quiz = {
+                date: document.getElementById('date').value,
+                category: document.getElementById('category').value,
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                questions: []
+            };
+
+            if (document.getElementById('backgroundImage').value) {
+                quiz.background_image = document.getElementById('backgroundImage').value;
+            }
+
+            const questionCards = document.querySelectorAll('.question-card');
+            
+            questionCards.forEach((card, index) => {
+                const questionText = card.querySelector('.question-text').value;
+                const options = Array.from(card.querySelectorAll('.option')).map(input => input.value);
+                const correctRadio = card.querySelector('input[type="radio"]:checked');
+                
+                if (questionText && options.every(opt => opt) && correctRadio) {
+                    quiz.questions.push({
+                        question: questionText,
+                        options: options,
+                        correct_answer: parseInt(correctRadio.value)
+                    });
+                }
+            });
+
+            const jsonOutput = document.getElementById('jsonOutput');
+            const jsonPreview = document.getElementById('jsonPreview');
+            
+            jsonOutput.textContent = JSON.stringify(quiz, null, 2);
+            jsonPreview.style.display = 'block';
+            jsonPreview.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function downloadJSON() {
+            generateJSON();
+            const jsonContent = document.getElementById('jsonOutput').textContent;
+            const date = document.getElementById('date').value;
+            const title = document.getElementById('title').value.toLowerCase().replace(/[^a-z0-9]/g, '_');
+            
+            const filename = `${date}_${title}.json`;
+            const blob = new Blob([jsonContent], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Initialize with one question
+        addQuestion();
+        
+        // Set default date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('date').value = tomorrow.toISOString().split('T')[0];
+    </script>
+</body>
+</html>
