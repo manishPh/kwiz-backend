@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from quiz.views_debug import debug_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/quiz/', include('quiz.urls')),
+    path('api/debug-login/', debug_login, name='debug_login'),
 ]
