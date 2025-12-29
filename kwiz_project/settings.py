@@ -154,6 +154,19 @@ else:
         "https://kwiz-frontend.railway.app",  # Alternative Railway domain
     ]
 
+# CSRF settings for Railway deployment
+if DEBUG:
+    CSRF_TRUSTED_ORIGINS = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ]
+else:
+    CSRF_TRUSTED_ORIGINS = [
+        "https://kwiz.fun",
+        "https://www.kwiz.fun",
+        "https://*.railway.app",  # Allow all Railway subdomains
+    ]
+
 # REST Framework settings
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
