@@ -9,8 +9,9 @@ python manage.py collectstatic --noinput
 # Run migrations
 python manage.py migrate
 
-# Set admin password (creates fresh admin user)
-python manage.py set_admin_password
+# Create admin user
+echo "Creating admin user..."
+python create_admin_simple.py || echo "Admin user creation failed, continuing..."
 
 # Start gunicorn
 exec gunicorn kwiz_project.wsgi --bind 0.0.0.0:$PORT --workers 2
