@@ -1,47 +1,35 @@
-# Frontend (React/Node.js)
-kwiz-frontend/node_modules/
-kwiz-frontend/build/
-kwiz-frontend/dist/
-kwiz-frontend/.env
-kwiz-frontend/.env.local
-kwiz-frontend/.env.development.local
-kwiz-frontend/.env.test.local
-kwiz-frontend/.env.production.local
-kwiz-frontend/npm-debug.log*
-kwiz-frontend/yarn-debug.log*
-kwiz-frontend/yarn-error.log*
-kwiz-frontend/.DS_Store
+# Python cache files
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*.pyc
+*/*.pyc
+*/*/*.pyc
+*.pyo
+*.pyd
 
-# Backend (Django/Python)
-kwiz-backend/__pycache__/
-kwiz-backend/*/__pycache__/
-kwiz-backend/*/*/__pycache__/
-kwiz-backend/*.pyc
-kwiz-backend/*/*.pyc
-kwiz-backend/*/*/*.pyc
-kwiz-backend/*.pyo
-kwiz-backend/*.pyd
-kwiz-backend/.Python
-kwiz-backend/env/
-kwiz-backend/venv/
-kwiz-backend/.venv/
-kwiz-backend/ENV/
-kwiz-backend/env.bak/
-kwiz-backend/venv.bak/
+# Virtual environments
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
 
 # Django specific
-kwiz-backend/db.sqlite3
-kwiz-backend/db.sqlite3-journal
-kwiz-backend/media/
-kwiz-backend/staticfiles/
-kwiz-backend/.env
-kwiz-backend/local_settings.py
-kwiz-backend/celerybeat-schedule
-kwiz-backend/celerybeat.pid
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+.env
+local_settings.py
+celerybeat-schedule
+celerybeat.pid
 
 # Quiz configurations (optional - you might want to track these)
-kwiz-backend/quiz_configs/imported/
-kwiz-backend/quiz_configs/pending/*.json
+quiz_configs/imported/
+quiz_configs/pending/*.json
 
 # IDE and Editor files
 .vscode/
@@ -130,12 +118,10 @@ jspm_packages/
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-# Python virtual environments
-__pycache__/
+# Python build artifacts
 *.py[cod]
 *$py.class
 *.so
-.Python
 build/
 develop-eggs/
 dist/
