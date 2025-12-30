@@ -13,7 +13,7 @@ def debug_login(request):
             data = json.loads(request.body)
             username = data.get('username')
             password = data.get('password')
-            
+
             # Try to get user
             try:
                 user = User.objects.get(username=username)
@@ -28,11 +28,11 @@ def debug_login(request):
                 is_superuser = False
                 is_active = False
                 password_correct = False
-            
+
             # Try authentication
             auth_user = authenticate(username=username, password=password)
             auth_success = auth_user is not None
-            
+
             return JsonResponse({
                 'user_exists': user_exists,
                 'is_staff': is_staff,
@@ -44,6 +44,38 @@ def debug_login(request):
             })
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=400)
-    
+
     return JsonResponse({'message': 'POST username and password to test'})
+
+
+@csrf_exempt
+def create_admin_user(request):
+    """Endpoint to create admin user - call this once to set up admin"""
+    try:
+        # Delete all existing users
+        User.objects.all().delete()
+
+        # Create admin user
+        admin = User.objects.create_superuser(
+            username='admin',
+            email='admin@kwiz.fun',
+            password='admin123'
+        )
+
+        # Verify password
+        password_check = admin.check_password('admin123')
+
+        return JsonResponse({
+            'success': True,
+            'message': 'Admin user created successfully',
+            'username': 'admin',
+            'password': 'admin123',
+            'password_verified': password_check,
+            'total_users': User.objects.count()
+        })
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        }, status=500)
 
