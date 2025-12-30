@@ -4,6 +4,16 @@ from django.utils.html import format_html
 from .models import Category, DailyQuiz, Question, QuizConfigUpload
 import json
 from datetime import datetime
+from kwiz_project.constants import (
+    REQUIRED_QUIZ_FIELDS, REQUIRED_QUESTION_FIELDS,
+    REQUIRED_OPTIONS_COUNT, VALID_ANSWER_INDICES,
+    ANSWER_CHOICES, DATE_FORMAT,
+    ERROR_QUIZ_ALREADY_EXISTS, ERROR_MISSING_FIELD,
+    ERROR_INVALID_QUESTIONS, ERROR_NO_QUESTIONS,
+    ERROR_INVALID_OPTIONS_COUNT, ERROR_INVALID_CORRECT_ANSWER,
+    DEFAULT_CATEGORY_DESCRIPTION_TEMPLATE,
+    SUCCESS_QUIZ_IMPORTED
+)
 
 
 class QuestionInline(admin.TabularInline):
@@ -119,18 +129,20 @@ class QuizConfigUploadAdmin(admin.ModelAdmin):
             self.validate_config(config)
 
             # Extract quiz info
-            quiz_date = datetime.strptime(config['date'], '%Y-%m-%d').date()
+            quiz_date = datetime.strptime(config['date'], DATE_FORMAT).date()
             upload.quiz_date = quiz_date
             upload.quiz_title = config['title']
 
             # Check if quiz already exists
             if DailyQuiz.objects.filter(date=quiz_date).exists():
-                raise ValueError(f'Quiz for date {quiz_date} already exists')
+                raise ValueError(ERROR_QUIZ_ALREADY_EXISTS.format(date=quiz_date))
 
             # Get or create category
             category, _ = Category.objects.get_or_create(
                 name=config['category'],
-                defaults={'description': f'Questions about {config["category"]}'}
+                defaults={'description': DEFAULT_CATEGORY_DESCRIPTION_TEMPLATE.format(
+                    category=config["category"]
+                )}
             )
 
             # Create quiz
@@ -143,7 +155,6 @@ class QuizConfigUploadAdmin(admin.ModelAdmin):
             )
 
             # Create questions
-            answer_map = ['A', 'B', 'C', 'D']
             for i, q_data in enumerate(config['questions']):
                 Question.objects.create(
                     quiz=quiz,
@@ -153,7 +164,7 @@ class QuizConfigUploadAdmin(admin.ModelAdmin):
                     option_b=q_data['options'][1],
                     option_c=q_data['options'][2],
                     option_d=q_data['options'][3],
-                    correct_answer=answer_map[q_data['correct_answer']]
+                    correct_answer=ANSWER_CHOICES[q_data['correct_answer']]
                 )
 
             # Update upload status
@@ -177,25 +188,24 @@ class QuizConfigUploadAdmin(admin.ModelAdmin):
 
     def validate_config(self, config):
         """Validate quiz configuration"""
-        required_fields = ['date', 'category', 'title', 'questions']
-        for field in required_fields:
+        for field in REQUIRED_QUIZ_FIELDS:
             if field not in config:
-                raise ValueError(f'Missing required field: {field}')
+                raise ValueError(ERROR_MISSING_FIELD.format(field=field))
 
         if not isinstance(config['questions'], list):
-            raise ValueError('Questions must be a list')
+            raise ValueError(ERROR_INVALID_QUESTIONS)
 
         if len(config['questions']) == 0:
-            raise ValueError('Quiz must have at least one question')
+            raise ValueError(ERROR_NO_QUESTIONS)
 
         for i, question in enumerate(config['questions']):
-            required_q_fields = ['question', 'options', 'correct_answer']
-            for field in required_q_fields:
+            for field in REQUIRED_QUESTION_FIELDS:
                 if field not in question:
-                    raise ValueError(f'Question {i+1}: Missing required field: {field}')
+                    raise ValueError(ERROR_MISSING_FIELD.format(field=field))
 
-            if len(question['options']) != 4:
-                raise ValueError(f'Question {i+1}: Must have exactly 4 options')
+            if len(question['options']) != REQUIRED_OPTIONS_COUNT:
+                raise ValueError(ERROR_INVALID_OPTIONS_COUNT.format(number=i+1))
 
-            if not isinstance(question['correct_answer'], int) or question['correct_answer'] not in [0, 1, 2, 3]:
-                raise ValueError(f'Question {i+1}: correct_answer must be 0, 1, 2, or 3')
+            if (not isinstance(question['correct_answer'], int) or
+                    question['correct_answer'] not in VALID_ANSWER_INDICES):
+                raise ValueError(ERROR_INVALID_CORRECT_ANSWER.format(number=i+1))

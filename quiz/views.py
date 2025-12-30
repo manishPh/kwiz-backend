@@ -11,6 +11,13 @@ from .serializers import (
     QuestionResultSerializer,
     ArchiveQuizSerializer
 )
+from kwiz_project.constants import (
+    SCORE_EMOJI_EXCELLENT, SCORE_EMOJI_GREAT, SCORE_EMOJI_GOOD,
+    SCORE_EMOJI_OKAY, SCORE_EMOJI_TRY_AGAIN,
+    SCORE_THRESHOLD_EXCELLENT, SCORE_THRESHOLD_GREAT,
+    SCORE_THRESHOLD_GOOD, SCORE_THRESHOLD_OKAY,
+    QUIZ_DATE_DISPLAY_FORMAT, ERROR_NO_QUIZ_TODAY
+)
 
 
 @api_view(['GET'])
@@ -98,18 +105,18 @@ def submit_quiz(request):
         percentage = round((score / total_questions) * 100) if total_questions > 0 else 0
 
         # Generate share text with emojis and engagement
-        if percentage >= 90:
-            emoji_score = "🏆"
-        elif percentage >= 80:
-            emoji_score = "🌟"
-        elif percentage >= 70:
-            emoji_score = "👏"
-        elif percentage >= 60:
-            emoji_score = "👍"
+        if percentage >= SCORE_THRESHOLD_EXCELLENT:
+            emoji_score = SCORE_EMOJI_EXCELLENT
+        elif percentage >= SCORE_THRESHOLD_GREAT:
+            emoji_score = SCORE_EMOJI_GREAT
+        elif percentage >= SCORE_THRESHOLD_GOOD:
+            emoji_score = SCORE_EMOJI_GOOD
+        elif percentage >= SCORE_THRESHOLD_OKAY:
+            emoji_score = SCORE_EMOJI_OKAY
         else:
-            emoji_score = "💪"
+            emoji_score = SCORE_EMOJI_TRY_AGAIN
 
-        share_text = (f"🎬 Bollywood Kwiz #{quiz_date.strftime('%d%m%Y')} 🎬\n"
+        share_text = (f"🎬 Bollywood Kwiz #{quiz_date.strftime(QUIZ_DATE_DISPLAY_FORMAT)} 🎬\n"
                      f"{emoji_score} {score}/{total_questions} ({percentage}%)\n\n"
                      f"Can you beat my score? 🤔")
 
@@ -170,7 +177,7 @@ def get_quiz_status(request, quiz_date=None):
                     }
 
                 return Response({
-                    'error': 'No quiz available for today',
+                    'error': ERROR_NO_QUIZ_TODAY,
                     'next_quiz': next_quiz_info
                 }, status=status.HTTP_404_NOT_FOUND)
 

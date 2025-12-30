@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+from .constants import (
+    DOMAIN, DOMAIN_WITH_WWW, RAILWAY_DOMAIN_PATTERN,
+    FRONTEND_PRODUCTION_DOMAINS, DEVELOPMENT_DOMAINS
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-zid9_oc%$_vdjoye3$1n5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['*'] if DEBUG else ['kwiz.fun', 'www.kwiz.fun', '.railway.app']
+ALLOWED_HOSTS = ['*'] if DEBUG else [DOMAIN, DOMAIN_WITH_WWW, RAILWAY_DOMAIN_PATTERN]
 
 
 # Application definition
@@ -143,27 +147,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings
 if DEBUG:
-    CORS_ALLOWED_ORIGINS = [
-        "http://localhost:3000",
-    ]
+    CORS_ALLOWED_ORIGINS = DEVELOPMENT_DOMAINS
 else:
-    CORS_ALLOWED_ORIGINS = [
-        "https://kwiz.fun",
-        "https://www.kwiz.fun",
-        "https://kwiz-frontend-production.railway.app",  # Railway frontend
-        "https://kwiz-frontend.railway.app",  # Alternative Railway domain
-    ]
+    CORS_ALLOWED_ORIGINS = FRONTEND_PRODUCTION_DOMAINS
 
 # CSRF settings for Railway deployment
 if DEBUG:
-    CSRF_TRUSTED_ORIGINS = [
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-    ]
+    CSRF_TRUSTED_ORIGINS = DEVELOPMENT_DOMAINS
 else:
     CSRF_TRUSTED_ORIGINS = [
-        "https://kwiz.fun",
-        "https://www.kwiz.fun",
+        f"https://{DOMAIN}",
+        f"https://{DOMAIN_WITH_WWW}",
         "https://*.railway.app",  # Allow all Railway subdomains
     ]
 
