@@ -3,6 +3,34 @@
 ## Overview
 This system allows non-technical team members to create quiz configurations using simple JSON files that can be easily imported into the Kwiz app.
 
+## 🚀 Quick Start: Upload a Quiz (Recommended Method)
+
+### For Team Members with Admin Access
+
+1. **Create your quiz JSON file** (see format below or use `production/EXAMPLE_quiz_template.json` as template)
+2. **Go to Django Admin**: `https://your-domain.com/admin/`
+3. **Navigate to**: Quiz → Quiz Config Uploads
+4. **Click**: "Add Quiz Config Upload"
+5. **Upload your file**:
+   - Click "Choose File" and select your JSON file
+   - Enter your name in "Uploaded by" (optional)
+   - Click "Save"
+6. **Done!** The quiz is automatically imported and validated
+
+### What Happens After Upload?
+
+- ✅ **Success**: Status shows "Imported" in green, quiz is live
+- ❌ **Error**: Status shows "Failed" in red with error message explaining the issue
+- You can view all your uploads and their status in the "Quiz Config Uploads" section
+
+### Benefits of Admin Upload
+
+- **No command line needed** - just use the web interface
+- **Automatic validation** - errors are caught and explained clearly
+- **Upload history** - see all past uploads and their status
+- **Team friendly** - anyone with admin access can upload quizzes
+- **Works on free tier** - no shell access required
+
 ## 📋 Quiz Configuration Format
 
 ### Basic Structure

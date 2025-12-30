@@ -1,0 +1,59 @@
+{
+  "date": "2025-01-15",
+  "category": "Movies",
+  "title": "Example Quiz Title",
+  "description": "Example quiz description - replace with your own",
+  "questions": [
+    {
+      "question": "Example question 1?",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Example question 2?",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Example question 3?",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Example question 4?",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "Example question 5?",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "correct_answer": 0
+    }
+  ]
+}
+
