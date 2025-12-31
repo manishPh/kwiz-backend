@@ -1,0 +1,85 @@
+{
+  "date": "2025-01-01",
+  "category": "Actors",
+  "title": "Vidya Balan: The Powerhouse Performer",
+  "description": "Celebrate the New Year with a quiz on one of Bollywood's most versatile actresses",
+  "background_image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200",
+  "questions": [
+    {
+      "question": "In which year did Vidya Balan make her Bollywood debut with 'Parineeta'?",
+      "options": ["2003", "2004", "2005", "2006"],
+      "correct_answer": 2
+    },
+    {
+      "question": "For which film did Vidya Balan win her first National Film Award?",
+      "options": ["Kahaani", "The Dirty Picture", "Paa", "Ishqiya"],
+      "correct_answer": 1
+    },
+    {
+      "question": "What was the name of Vidya's character in 'Kahaani'?",
+      "options": ["Vidya Bagchi", "Vidya Venkatesan", "Vidya Sharma", "Vidya Iyer"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'The Dirty Picture', Vidya played a character inspired by which real-life actress?",
+      "options": ["Silk Smitha", "Jayamalini", "Disco Shanti", "Anuradha"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which film featured Vidya Balan as a radio jockey?",
+      "options": ["Tumhari Sulu", "Kahaani", "Bobby Jasoos", "Begum Jaan"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Paa', who played Vidya Balan's son suffering from progeria?",
+      "options": ["Ranbir Kapoor", "Amitabh Bachchan", "Abhishek Bachchan", "Parth Bhalerao"],
+      "correct_answer": 1
+    },
+    {
+      "question": "What was Vidya's profession in the film 'Bobby Jasoos'?",
+      "options": ["Journalist", "Detective", "Lawyer", "Police Officer"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which Vidya Balan film was a sequel released in 2022?",
+      "options": ["Kahaani 2", "Tumhari Sulu 2", "Jalsa", "None of these"],
+      "correct_answer": 3
+    },
+    {
+      "question": "In 'Ishqiya', who were Vidya's co-stars?",
+      "options": ["Naseeruddin Shah and Arshad Warsi", "Irrfan Khan and Nawazuddin Siddiqui", "Emraan Hashmi and Rajkummar Rao", "Saif Ali Khan and Kunal Khemu"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which film marked Vidya Balan's Malayalam cinema debut?",
+      "options": ["Urumi", "Njan Gandharvan", "Chakram", "Manassinakkare"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Mission Mangal', what role did Vidya play?",
+      "options": ["Project Director", "Scientist", "Astronaut", "Mission Commander"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which period drama featured Vidya as Begum Jaan?",
+      "options": ["Begum Jaan", "Parineeta", "Heyy Babyy", "Lage Raho Munna Bhai"],
+      "correct_answer": 0
+    },
+    {
+      "question": "What was unique about Vidya's role in 'Bhool Bhulaiyaa'?",
+      "options": ["She played a ghost", "She had a double role", "She played a possessed woman", "She was a psychiatrist"],
+      "correct_answer": 2
+    },
+    {
+      "question": "In which film did Vidya Balan star opposite Sanjay Dutt?",
+      "options": ["Parineeta", "Lage Raho Munna Bhai", "Heyy Babyy", "All of the above"],
+      "correct_answer": 3
+    },
+    {
+      "question": "Which 2023 film featured Vidya Balan in a thriller alongside Pratik Gandhi?",
+      "options": ["Neeyat", "Jalsa", "Sherni", "Kahaani 2"],
+      "correct_answer": 0
+    }
+  ]
+}
+
