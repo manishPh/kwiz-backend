@@ -29,8 +29,26 @@ def get_today_ist():
 
 @api_view(['GET'])
 def get_daily_quiz(request, quiz_date):
-    """Get daily quiz for a specific date"""
+    """Get daily quiz for a specific date (today or past only)"""
     try:
+        # Parse the requested date
+        from datetime import datetime as dt
+        try:
+            requested_date = dt.strptime(quiz_date, '%Y-%m-%d').date()
+        except ValueError:
+            return Response({
+                'error': 'Invalid date format. Use YYYY-MM-DD'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        # Check if requested date is in the future (based on IST)
+        today_ist = get_today_ist()
+        if requested_date > today_ist:
+            return Response({
+                'error': 'Cannot access future quizzes',
+                'requested_date': quiz_date,
+                'message': 'You can only access today\'s quiz or past quizzes'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
         quiz = get_object_or_404(DailyQuiz, date=quiz_date)
 
         # Check if quiz is available
