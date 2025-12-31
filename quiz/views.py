@@ -44,10 +44,8 @@ def get_daily_quiz(request, quiz_date):
         today_ist = get_today_ist()
         if requested_date > today_ist:
             return Response({
-                'error': 'Cannot access future quizzes',
-                'requested_date': quiz_date,
-                'message': 'You can only access today\'s quiz or past quizzes'
-            }, status=status.HTTP_400_BAD_REQUEST)
+                'error': 'Kwiz not found'
+            }, status=status.HTTP_404_NOT_FOUND)
 
         quiz = get_object_or_404(DailyQuiz, date=quiz_date)
 
