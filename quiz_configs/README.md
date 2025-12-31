@@ -1,13 +1,13 @@
 # 📝 Kwiz Configuration System
 
 ## Overview
-This system allows non-technical team members to create quiz configurations using simple JSON files that can be easily imported into the Kwiz app.
+This system allows team members to create and upload quiz configurations using simple JSON files through the Django Admin interface.
 
-## 🚀 Quick Start: Upload a Quiz (Recommended Method)
+## 🚀 How to Upload a Quiz
 
 ### For Team Members with Admin Access
 
-1. **Create your quiz JSON file** (see format below or use `production/EXAMPLE_quiz_template.json` as template)
+1. **Create your quiz JSON file** (see format below or use templates in `templates/` folder)
 2. **Go to Django Admin**: `https://your-domain.com/admin/`
 3. **Navigate to**: Quiz → Quiz Config Uploads
 4. **Click**: "Add Quiz Config Upload"
@@ -19,17 +19,17 @@ This system allows non-technical team members to create quiz configurations usin
 
 ### What Happens After Upload?
 
-- ✅ **Success**: Status shows "Imported" in green, quiz is live
+- ✅ **Success**: Status shows "Imported" in green, quiz is live and available to users
 - ❌ **Error**: Status shows "Failed" in red with error message explaining the issue
 - You can view all your uploads and their status in the "Quiz Config Uploads" section
 
-### Benefits of Admin Upload
+### Benefits
 
-- **No command line needed** - just use the web interface
-- **Automatic validation** - errors are caught and explained clearly
-- **Upload history** - see all past uploads and their status
-- **Team friendly** - anyone with admin access can upload quizzes
-- **Works on free tier** - no shell access required
+- **Simple** - No command line or technical knowledge needed
+- **Automatic validation** - Errors are caught and explained clearly
+- **Upload history** - See all past uploads and their status
+- **Team friendly** - Anyone with admin access can upload quizzes
+- **Works everywhere** - No shell access required (works on Railway, Heroku, etc.)
 
 ## 📋 Quiz Configuration Format
 
@@ -115,19 +115,12 @@ This system allows non-technical team members to create quiz configurations usin
 kwiz-backend/
 ├── quiz_configs/
 │   ├── README.md (this file)
-│   ├── templates/
-│   │   ├── bollywood_template.json
-│   │   ├── sports_template.json
-│   │   └── general_template.json
-│   ├── pending/
-│   │   ├── 2025-06-09_srk_birthday.json
-│   │   ├── 2025-06-15_cricket_special.json
-│   │   └── 2025-06-20_music_legends.json
-│   └── imported/
-│       └── (moved here after successful import)
+│   └── templates/
+│       ├── bollywood_template.json
+│       └── sports_template.json
 ```
 
-### File Naming Convention
+### File Naming Convention (Recommended)
 `YYYY-MM-DD_quiz_theme.json`
 
 Examples:
@@ -135,26 +128,25 @@ Examples:
 - `2025-06-15_cricket_worldcup.json`
 - `2025-12-25_christmas_special.json`
 
-## 🛠️ Usage Instructions for Non-Technical Team
+## 🛠️ Creating a Quiz
 
 ### Step 1: Choose a Template
-Copy one of the template files from the `templates/` folder based on your quiz type.
+Use one of the template files from the `templates/` folder as a starting point:
+- `bollywood_template.json` - For films, actors, music
+- `sports_template.json` - For sports-related quizzes
 
 ### Step 2: Fill in Your Content
-1. Update the `date` field with your target quiz date
+1. Update the `date` field with your target quiz date (YYYY-MM-DD format)
 2. Set appropriate `category`, `title`, and `description`
 3. Add your questions following the format
 4. Ensure exactly 4 options per question
 5. Set the correct answer index (0 for first option, 1 for second, etc.)
 
-### Step 3: Validate Your Quiz
-- Check that all required fields are filled
-- Verify question count (recommended: 10-15 questions)
-- Ensure correct_answer indices are valid (0-3)
-- Test that JSON is properly formatted
-
-### Step 4: Submit
-Save your file in the `pending/` folder with the proper naming convention and notify the technical team.
+### Step 3: Upload via Admin
+1. Go to Django Admin → Quiz Config Uploads
+2. Upload your JSON file
+3. The system automatically validates and imports it
+4. Check the status - if failed, fix the errors shown and re-upload
 
 ## ✅ Quality Guidelines
 
