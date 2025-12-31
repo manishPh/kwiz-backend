@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
-from datetime import date
+from datetime import date, datetime
 import pytz
 from .models import DailyQuiz, Question
 from .serializers import (
@@ -18,6 +18,13 @@ from kwiz_project.constants import (
     SCORE_THRESHOLD_GOOD, SCORE_THRESHOLD_OKAY,
     QUIZ_DATE_DISPLAY_FORMAT, ERROR_NO_QUIZ_TODAY
 )
+
+
+def get_today_ist():
+    """Get today's date in IST timezone"""
+    ist = pytz.timezone('Asia/Kolkata')
+    now_ist = datetime.now(ist)
+    return now_ist.date()
 
 
 @api_view(['GET'])
@@ -139,8 +146,9 @@ def submit_quiz(request):
 def get_quiz_archive(request):
     """Get list of available past quizzes"""
     try:
+        today = get_today_ist()
         quizzes = DailyQuiz.objects.filter(
-            date__lte=date.today(),
+            date__lte=today,
             is_released=True
         ).order_by('-date')[:30]  # Last 30 quizzes
 
@@ -161,8 +169,8 @@ def get_quiz_status(request, quiz_date=None):
         if quiz_date:
             quiz = get_object_or_404(DailyQuiz, date=quiz_date)
         else:
-            # Get today's quiz
-            today = date.today()
+            # Get today's quiz based on IST timezone
+            today = get_today_ist()
             quiz = DailyQuiz.objects.filter(date=today).first()
 
             if not quiz:
