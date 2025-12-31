@@ -30,53 +30,54 @@ def get_today_ist():
 @api_view(['GET'])
 def get_daily_quiz(request, quiz_date):
     """Get daily quiz for a specific date (today or past only)"""
+    # Parse the requested date
+    from datetime import datetime as dt
     try:
-        # Parse the requested date
-        from datetime import datetime as dt
-        try:
-            requested_date = dt.strptime(quiz_date, '%Y-%m-%d').date()
-        except ValueError:
-            return Response({
-                'error': 'Invalid date format. Use YYYY-MM-DD'
-            }, status=status.HTTP_400_BAD_REQUEST)
+        requested_date = dt.strptime(quiz_date, '%Y-%m-%d').date()
+    except ValueError:
+        return Response({
+            'error': 'Invalid date format. Use YYYY-MM-DD'
+        }, status=status.HTTP_400_BAD_REQUEST)
 
-        # Check if requested date is in the future (based on IST)
-        today_ist = get_today_ist()
-        if requested_date > today_ist:
-            return Response({
-                'error': 'Kwiz not found'
-            }, status=status.HTTP_404_NOT_FOUND)
+    # Check if requested date is in the future (based on IST)
+    today_ist = get_today_ist()
+    if requested_date > today_ist:
+        return Response({
+            'error': 'Kwiz not found'
+        }, status=status.HTTP_404_NOT_FOUND)
 
-        quiz = get_object_or_404(DailyQuiz, date=quiz_date)
+    # Check if quiz exists in database
+    try:
+        quiz = DailyQuiz.objects.get(date=quiz_date)
+    except DailyQuiz.DoesNotExist:
+        # Quiz doesn't exist for this date (past or present)
+        return Response({
+            'error': 'Kwiz not found'
+        }, status=status.HTTP_404_NOT_FOUND)
 
-        # Check if quiz is available
-        if not quiz.is_available:
-            time_until_release = quiz.get_time_until_release()
-            next_quiz_info = quiz.get_next_quiz_info()
+    # Check if quiz is available (released)
+    if not quiz.is_available:
+        time_until_release = quiz.get_time_until_release()
+        next_quiz_info = quiz.get_next_quiz_info()
 
-            return Response({
-                'error': 'Quiz not yet available',
-                'quiz_date': quiz.date,
-                'quiz_title': quiz.title,
-                'time_until_release': time_until_release,
-                'next_quiz': next_quiz_info,
-                'message': f'This quiz will be available soon!'
-            }, status=status.HTTP_403_FORBIDDEN)
+        return Response({
+            'error': 'Quiz not yet available',
+            'quiz_date': quiz.date,
+            'quiz_title': quiz.title,
+            'time_until_release': time_until_release,
+            'next_quiz': next_quiz_info,
+            'message': f'This quiz will be available soon!'
+        }, status=status.HTTP_403_FORBIDDEN)
 
-        serializer = QuizSerializer(quiz)
-        quiz_data = serializer.data
+    # Quiz exists and is available, return it
+    serializer = QuizSerializer(quiz)
+    quiz_data = serializer.data
 
-        # Add timer information for frontend
-        quiz_data['time_until_release'] = 0  # Already available
-        quiz_data['next_quiz'] = quiz.get_next_quiz_info()
+    # Add timer information for frontend
+    quiz_data['time_until_release'] = 0  # Already available
+    quiz_data['next_quiz'] = quiz.get_next_quiz_info()
 
-        return Response(quiz_data)
-
-    except Exception as e:
-        return Response(
-            {'error': str(e)},
-            status=status.HTTP_400_BAD_REQUEST
-        )
+    return Response(quiz_data)
 
 
 @api_view(['POST'])
