@@ -24,10 +24,10 @@ class QuizSerializer(serializers.ModelSerializer):
     """Serializer for daily quiz (without answers)"""
     questions = QuestionSerializer(many=True, read_only=True)
     category_name = serializers.CharField(source='category.name', read_only=True)
-    
+
     class Meta:
         model = DailyQuiz
-        fields = ['date', 'title', 'description', 'category_name', 'questions']
+        fields = ['date', 'title', 'description', 'category_name', 'background_image', 'questions']
 
 
 class QuizResultSerializer(serializers.Serializer):

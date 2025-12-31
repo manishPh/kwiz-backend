@@ -58,7 +58,7 @@ This system allows team members to create and upload quiz configurations using s
 - `category` (required): Category name (Films, Actors, Music, Sports, etc.)
 - `title` (required): Quiz title (max 200 characters)
 - `description` (optional): Brief description of the quiz theme
-- `background_image` (optional): URL for contextual background image
+- `background_image` (optional): URL for custom background image (if not provided, frontend uses default)
 
 #### **Questions Array**
 - `question` (required): The question text

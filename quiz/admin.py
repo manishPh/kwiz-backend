@@ -151,6 +151,7 @@ class QuizConfigUploadAdmin(admin.ModelAdmin):
                 category=category,
                 title=config['title'],
                 description=config.get('description', ''),
+                background_image=config.get('background_image', ''),
                 is_released=True
             )
 

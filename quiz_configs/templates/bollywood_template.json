@@ -3,13 +3,12 @@
   "category": "Films",
   "title": "Bollywood Quiz Title Here",
   "description": "Brief description of the quiz theme",
-  "background_image": "https://static.toiimg.com/thumb/msid-119610150,imgsize-82628,width-400,resizemode-4/119610150.jpg",
   "questions": [
     {
       "question": "Your question text here?",
       "options": [
         "Option A",
-        "Option B", 
+        "Option B",
         "Option C",
         "Option D"
       ],
@@ -20,7 +19,7 @@
       "options": [
         "First choice",
         "Second choice",
-        "Third choice", 
+        "Third choice",
         "Fourth choice"
       ],
       "correct_answer": 1
@@ -40,7 +39,7 @@
       "options": [
         "Choice A",
         "Choice B",
-        "Choice C", 
+        "Choice C",
         "Choice D"
       ],
       "correct_answer": 3

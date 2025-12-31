@@ -20,6 +20,7 @@ class DailyQuiz(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
+    background_image = models.URLField(max_length=500, blank=True, null=True)
     release_time = models.TimeField(default="00:00")
     is_released = models.BooleanField(default=False)
 
