@@ -1,0 +1,85 @@
+{
+  "date": "2026-01-04",
+  "category": "Films",
+  "title": "Bollywood Romantic Movies Trivia",
+  "description": "Test your knowledge of the most romantic Bollywood films that touched our hearts",
+  "background_image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200",
+  "questions": [
+    {
+      "question": "In 'Dilwale Dulhania Le Jayenge', where did Raj and Simran first meet?",
+      "options": ["London", "On a Europe trip", "In Punjab", "At a wedding"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which romantic film featured the iconic dialogue 'Pyaar dosti hai'?",
+      "options": ["Kuch Kuch Hota Hai", "Kabhi Khushi Kabhie Gham", "Kal Ho Naa Ho", "Mohabbatein"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Veer-Zaara', what was the profession of Veer Pratap Singh?",
+      "options": ["Army Officer", "Air Force Pilot", "Lawyer", "Doctor"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which film featured Ranbir Kapoor and Deepika Padukone in Manali?",
+      "options": ["Tamasha", "Yeh Jawaani Hai Deewani", "Bachna Ae Haseeno", "Love Aaj Kal"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Jab We Met', what was Geet's destination when she first met Aditya?",
+      "options": ["Manali", "Bhatinda", "Mumbai", "Delhi"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which romantic film had the tagline 'A love story'?",
+      "options": ["Mohabbatein", "Kal Ho Naa Ho", "Kabhi Alvida Naa Kehna", "Veer-Zaara"],
+      "correct_answer": 3
+    },
+    {
+      "question": "In 'Aashiqui 2', what was Rahul Jaykar's profession?",
+      "options": ["Actor", "Singer", "Musician", "Composer"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which film featured Shah Rukh Khan as Devdas?",
+      "options": ["Devdas (2002)", "Kabhi Khushi Kabhie Gham", "Mohabbatein", "Veer-Zaara"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Hum Dil De Chuke Sanam', who did Nandini eventually choose?",
+      "options": ["Sameer", "Vanraj", "Both", "Neither"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which romantic film featured Hrithik Roshan as a quadriplegic magician?",
+      "options": ["Kites", "Guzaarish", "Koi... Mil Gaya", "Jodhaa Akbar"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Rockstar', what was the name of Ranbir Kapoor's character?",
+      "options": ["Jordan", "Janardhan Jakhar", "Both A and B", "Ranbir"],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which film featured the song 'Tum Hi Ho' that became a massive hit?",
+      "options": ["Aashiqui", "Aashiqui 2", "Ek Villain", "Half Girlfriend"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Ae Dil Hai Mushkil', who played the role of Alizeh?",
+      "options": ["Deepika Padukone", "Anushka Sharma", "Katrina Kaif", "Alia Bhatt"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which romantic film was set against the backdrop of the Partition of India?",
+      "options": ["Veer-Zaara", "Gadar", "Refugee", "All of the above"],
+      "correct_answer": 3
+    },
+    {
+      "question": "In 'Barfi!', what was unique about Ranbir Kapoor's character?",
+      "options": ["He was blind", "He was deaf and mute", "He had amnesia", "He was paralyzed"],
+      "correct_answer": 1
+    }
+  ]
+}
+

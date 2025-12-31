@@ -1,0 +1,85 @@
+{
+  "date": "2026-01-07",
+  "category": "Actors",
+  "title": "Bipasha Basu & Her Work",
+  "description": "Test your knowledge about the Bengali beauty and her Bollywood journey",
+  "background_image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200",
+  "questions": [
+    {
+      "question": "Which film marked Bipasha Basu's Bollywood debut?",
+      "options": ["Raaz", "Ajnabee", "Jism", "Corporate"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Raaz', who was Bipasha's co-star?",
+      "options": ["Emraan Hashmi", "Dino Morea", "John Abraham", "Akshay Kumar"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which film earned Bipasha the Filmfare Award for Best Actress (Critics)?",
+      "options": ["Corporate", "Jism", "Raaz", "No Entry"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Dhoom 2', what was Bipasha's character's profession?",
+      "options": ["Thief", "Cop", "Model", "Dancer"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which horror film featured Bipasha in 2008 opposite Saif Ali Khan?",
+      "options": ["Raaz", "1920", "Race", "Aatma"],
+      "correct_answer": 2
+    },
+    {
+      "question": "In 'Jism', who played the male lead opposite Bipasha?",
+      "options": ["Emraan Hashmi", "John Abraham", "Dino Morea", "Arjun Rampal"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which film featured Bipasha as a businesswoman named Nishigandha Dasgupta?",
+      "options": ["Corporate", "Raaz 3", "Aatma", "Alone"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'No Entry', Bipasha played the role of which character?",
+      "options": ["Sanjana", "Kaajal", "Puja", "Anjali"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which 2013 horror film featured Bipasha in a double role?",
+      "options": ["Raaz 3", "Aatma", "Creature 3D", "Alone"],
+      "correct_answer": 3
+    },
+    {
+      "question": "In 'Bachna Ae Haseeno', Bipasha played which character?",
+      "options": ["Mahi", "Gayatri", "Aditi", "Anjali"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which film featured Bipasha opposite Akshay Kumar in a comedy role?",
+      "options": ["Humko Deewana Kar Gaye", "Phir Hera Pheri", "Aankhen", "All the Best"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Race', what was the relationship between Bipasha and Saif Ali Khan's characters?",
+      "options": ["Siblings", "Lovers", "Business partners", "Enemies"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which film featured Bipasha as a single mother protecting her daughter from a spirit?",
+      "options": ["Raaz 3", "Aatma", "Alone", "Creature 3D"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Raaz 3', who was Bipasha's co-star?",
+      "options": ["Dino Morea", "Emraan Hashmi", "John Abraham", "Arjun Rampal"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which was Bipasha's last theatrical release before her break from films?",
+      "options": ["Alone", "Raaz 3", "Aatma", "Creature 3D"],
+      "correct_answer": 0
+    }
+  ]
+}
+

@@ -1,0 +1,85 @@
+{
+  "date": "2026-01-02",
+  "category": "Films",
+  "title": "Bollywood Comedy Movies Trivia",
+  "description": "Test your knowledge of popular Bollywood comedy films that made us laugh",
+  "background_image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200",
+  "questions": [
+    {
+      "question": "Which 2003 comedy featured three friends trying to find a fourth friend named Sameer?",
+      "options": ["Dil Chahta Hai", "Munnabhai MBBS", "Hera Pheri", "Golmaal"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Hera Pheri', what was the name of Paresh Rawal's character?",
+      "options": ["Raju", "Shyam", "Baburao Ganpatrao Apte", "Kabira"],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which comedy film featured Aamir Khan as a college student named Rancho?",
+      "options": ["3 Idiots", "PK", "Rang De Basanti", "Taare Zameen Par"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Andaz Apna Apna', what was the name of the character played by Aamir Khan?",
+      "options": ["Prem", "Amar", "Raja", "Raju"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which Akshay Kumar comedy featured him as a man who can see ghosts?",
+      "options": ["Housefull", "Bhool Bhulaiyaa", "Singh Is Kinng", "Welcome"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Munna Bhai MBBS', what does Circuit call Munna Bhai?",
+      "options": ["Boss", "Bhai", "Munna Bhai", "Sir"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which comedy film had the tagline 'Apna Time Aayega'?",
+      "options": ["Gully Boy", "Fukrey", "Dream Girl", "Stree"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Chupke Chupke', who played the role of a botany professor pretending to be a driver?",
+      "options": ["Amitabh Bachchan", "Dharmendra", "Sanjeev Kumar", "Utpal Dutt"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which 2019 comedy featured Kartik Aaryan as a man pretending to be a woman?",
+      "options": ["Luka Chuppi", "Dream Girl", "Pati Patni Aur Woh", "Sonu Ke Titu Ki Sweety"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Golmaal', what was the profession of Ajay Devgn's character?",
+      "options": ["Teacher", "Student", "Businessman", "Unemployed"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which comedy film featured Ranbir Kapoor and Deepika Padukone in a love triangle with Aditya Roy Kapur?",
+      "options": ["Yeh Jawaani Hai Deewani", "Tamasha", "Bachna Ae Haseeno", "Ae Dil Hai Mushkil"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Welcome', who played the role of gangster Uday Shetty?",
+      "options": ["Anil Kapoor", "Nana Patekar", "Paresh Rawal", "Feroz Khan"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which comedy featured Akshay Kumar as a man who gets possessed by a transgender ghost?",
+      "options": ["Bhool Bhulaiyaa", "Laxmii", "Housefull 4", "Bachchhan Paandey"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Dhamaal', what were the four friends searching for?",
+      "options": ["Hidden treasure", "A missing person", "A job", "A bride"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which 2018 comedy featured Ayushmann Khurrana as a blind pianist?",
+      "options": ["Badhaai Ho", "AndhaDhun", "Article 15", "Bala"],
+      "correct_answer": 1
+    }
+  ]
+}
+

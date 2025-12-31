@@ -1,0 +1,85 @@
+{
+  "date": "2026-01-03",
+  "category": "Films",
+  "title": "Bollywood Thriller Movies Trivia",
+  "description": "Test your knowledge of edge-of-the-seat Bollywood thriller films",
+  "background_image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200",
+  "questions": [
+    {
+      "question": "In 'Kahaani', what was Vidya Bagchi searching for in Kolkata?",
+      "options": ["Her missing husband", "A criminal", "Her lost child", "A treasure"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which thriller featured Aamir Khan as a cop investigating a series of child abductions?",
+      "options": ["Talaash", "Ghajini", "Sarfarosh", "Fanaa"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Drishyam', what did Vijay Salgaonkar do to protect his family?",
+      "options": ["Hired a lawyer", "Created a perfect alibi", "Fled the country", "Confessed to the crime"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which 2015 thriller featured Amitabh Bachchan and Nawazuddin Siddiqui in a cat-and-mouse game?",
+      "options": ["Pink", "Te3n", "Badla", "Wazir"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'A Wednesday', what was the common man's demand?",
+      "options": ["Money", "Release of terrorists", "Justice for victims", "Political change"],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which thriller featured Shah Rukh Khan as a man with short-term memory loss?",
+      "options": ["Fan", "Darr", "Baazigar", "None of these"],
+      "correct_answer": 3
+    },
+    {
+      "question": "In 'Andhadhun', what instrument did Ayushmann Khurrana's character play?",
+      "options": ["Guitar", "Piano", "Violin", "Flute"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which 2012 thriller featured Kareena Kapoor as a prostitute helping a cop?",
+      "options": ["Heroine", "Talaash", "Agent Vinod", "Kurbaan"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Badla', who played the role of the lawyer Badal Gupta?",
+      "options": ["Amitabh Bachchan", "Irrfan Khan", "Nawazuddin Siddiqui", "Manoj Bajpayee"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which thriller featured Hrithik Roshan as a blind man seeking revenge?",
+      "options": ["Krrish", "Kaabil", "War", "Dhoom 2"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Ugly', what was the central plot about?",
+      "options": ["A murder mystery", "A kidnapped child", "A heist", "A conspiracy"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which 2016 thriller featured Taapsee Pannu trapped in a house?",
+      "options": ["Pink", "Naam Shabana", "Game Over", "Badla"],
+      "correct_answer": 2
+    },
+    {
+      "question": "In 'Raman Raghav 2.0', who played the role of the serial killer?",
+      "options": ["Nawazuddin Siddiqui", "Manoj Bajpayee", "Irrfan Khan", "Kay Kay Menon"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which thriller featured Kangana Ranaut as a woman with multiple personalities?",
+      "options": ["Queen", "Simran", "Judgementall Hai Kya", "Dhaakad"],
+      "correct_answer": 2
+    },
+    {
+      "question": "In 'NH10', what triggers the violent chain of events?",
+      "options": ["A robbery", "An honor killing", "A car accident", "A kidnapping"],
+      "correct_answer": 1
+    }
+  ]
+}
+

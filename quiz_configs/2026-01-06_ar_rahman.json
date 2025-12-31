@@ -1,0 +1,85 @@
+{
+  "date": "2026-01-06",
+  "category": "Music",
+  "title": "A R Rahman & His Work in Bollywood",
+  "description": "Celebrate the Mozart of Madras and his magical compositions",
+  "background_image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200",
+  "questions": [
+    {
+      "question": "Which film marked A R Rahman's Bollywood debut?",
+      "options": ["Dil Se", "Rangeela", "Roja", "Bombay"],
+      "correct_answer": 2
+    },
+    {
+      "question": "For which film did A R Rahman win his first Oscar?",
+      "options": ["Lagaan", "Slumdog Millionaire", "127 Hours", "Bombay"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which song from 'Dil Se' became an international hit?",
+      "options": ["Chaiyya Chaiyya", "Ae Ajnabi", "Jiya Jale", "Satrangi Re"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In which film did Rahman compose 'Jai Ho', which won an Oscar?",
+      "options": ["Rang De Basanti", "Slumdog Millionaire", "Lagaan", "Swades"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which Mani Ratnam film featured the song 'Taal Se Taal Mila'?",
+      "options": ["Dil Se", "Bombay", "Taal", "Guru"],
+      "correct_answer": 2
+    },
+    {
+      "question": "For which film did Rahman compose 'Vande Mataram'?",
+      "options": ["Rang De Basanti", "Lagaan", "Swades", "It was an independent album"],
+      "correct_answer": 3
+    },
+    {
+      "question": "Which Aamir Khan film featured Rahman's music with the song 'Mitwa'?",
+      "options": ["Lagaan", "Rang De Basanti", "Taare Zameen Par", "Ghajini"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In which film did Rahman compose 'Kun Faya Kun'?",
+      "options": ["Delhi-6", "Rockstar", "Highway", "Tamasha"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which Shah Rukh Khan film featured the song 'Tere Bina' composed by Rahman?",
+      "options": ["Dil Se", "Guru", "Jab Tak Hai Jaan", "Raees"],
+      "correct_answer": 1
+    },
+    {
+      "question": "For which film did Rahman compose 'Maa Tujhe Salaam'?",
+      "options": ["Border", "LOC Kargil", "Vande Mataram album", "Rang De Basanti"],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which Imtiaz Ali film featured Rahman's composition 'Nadaan Parindey'?",
+      "options": ["Jab We Met", "Rockstar", "Highway", "Tamasha"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In which film did Rahman compose 'Chale Chalo' for Aamir Khan?",
+      "options": ["Rang De Basanti", "Lagaan", "Mangal Pandey", "Taare Zameen Par"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which Hrithik Roshan film featured Rahman's music with the song 'Main Aisa Kyun Hoon'?",
+      "options": ["Jodhaa Akbar", "Lakshya", "Mohenjo Daro", "Kites"],
+      "correct_answer": 1
+    },
+    {
+      "question": "For which film did Rahman compose 'Jashn-e-Bahaara'?",
+      "options": ["Rang De Basanti", "Jodhaa Akbar", "Delhi-6", "Guru"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which Rakeysh Omprakash Mehra film featured the song 'Masakali' composed by Rahman?",
+      "options": ["Rang De Basanti", "Bhaag Milkha Bhaag", "Delhi-6", "Mere Pyare Prime Minister"],
+      "correct_answer": 2
+    }
+  ]
+}
+

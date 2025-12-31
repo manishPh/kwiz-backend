@@ -1,0 +1,85 @@
+{
+  "date": "2026-01-05",
+  "category": "Actors",
+  "title": "Deepika Padukone & Her Work",
+  "description": "Celebrate the journey of one of Bollywood's most successful actresses",
+  "background_image": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200",
+  "questions": [
+    {
+      "question": "Which film marked Deepika Padukone's Bollywood debut?",
+      "options": ["Love Aaj Kal", "Bachna Ae Haseeno", "Om Shanti Om", "Cocktail"],
+      "correct_answer": 2
+    },
+    {
+      "question": "In 'Padmaavat', Deepika played the role of which historical queen?",
+      "options": ["Jodha", "Padmavati", "Mastani", "Noor Jahan"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which film earned Deepika her first Filmfare Award for Best Actress?",
+      "options": ["Cocktail", "Piku", "Ram-Leela", "Chennai Express"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Bajirao Mastani', who played the role of Bajirao opposite Deepika?",
+      "options": ["Shah Rukh Khan", "Ranveer Singh", "Ranbir Kapoor", "Hrithik Roshan"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which Hollywood film marked Deepika's international debut?",
+      "options": ["Fast & Furious 7", "xXx: Return of Xander Cage", "Baywatch", "The Fate of the Furious"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Piku', what was Deepika's character's relationship with Amitabh Bachchan's character?",
+      "options": ["Daughter", "Granddaughter", "Niece", "Caretaker"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which film featured Deepika as Veronica opposite Saif Ali Khan?",
+      "options": ["Love Aaj Kal", "Cocktail", "Race 2", "Aarakshan"],
+      "correct_answer": 1
+    },
+    {
+      "question": "In 'Chennai Express', what was Deepika's character's name?",
+      "options": ["Meenamma", "Tara", "Shantipriya", "Naina"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which film featured Deepika in a double role as Shantipriya and Sandy?",
+      "options": ["Om Shanti Om", "Happy New Year", "Chandni Chowk to China", "Housefull"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Yeh Jawaani Hai Deewani', what was Deepika's character's nickname?",
+      "options": ["Bunny", "Naina", "Aditi", "Avi"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which film featured Deepika as a journalist named Naina Talwar?",
+      "options": ["Finding Fanny", "Tamasha", "Piku", "None of these"],
+      "correct_answer": 3
+    },
+    {
+      "question": "In 'Pathaan', what was Deepika's character's code name?",
+      "options": ["Rubina", "Rubai", "Zoya", "Ishika"],
+      "correct_answer": 1
+    },
+    {
+      "question": "Which film featured Deepika opposite Irrfan Khan in a road trip?",
+      "options": ["Piku", "Finding Fanny", "Tamasha", "Cocktail"],
+      "correct_answer": 0
+    },
+    {
+      "question": "In 'Ram-Leela', what was the name of Deepika's character?",
+      "options": ["Leela", "Rama", "Radha", "Sita"],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which 2023 film featured Deepika alongside Hrithik Roshan and Anil Kapoor?",
+      "options": ["Pathaan", "Fighter", "Jawan", "Bade Miyan Chote Miyan"],
+      "correct_answer": 1
+    }
+  ]
+}
+
