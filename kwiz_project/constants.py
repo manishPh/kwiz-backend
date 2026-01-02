@@ -23,6 +23,7 @@ NETLIFY_DOMAIN_PATTERN = '.netlify.app'
 PRODUCTION_DOMAINS = [
     DOMAIN,
     DOMAIN_WITH_WWW,
+    f'api.{DOMAIN}',  # API subdomain for Cloudflare
 ]
 
 # Frontend domains (for CORS)

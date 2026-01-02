@@ -159,6 +159,7 @@ else:
     CSRF_TRUSTED_ORIGINS = [
         f"https://{DOMAIN}",
         f"https://{DOMAIN_WITH_WWW}",
+        f"https://api.{DOMAIN}",  # API subdomain for Cloudflare
         "https://*.railway.app",  # Allow all Railway subdomains
     ]
 
