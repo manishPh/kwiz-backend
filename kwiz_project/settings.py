@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 from .constants import (
     DOMAIN, DOMAIN_WITH_WWW, RAILWAY_DOMAIN_PATTERN,
-    FRONTEND_PRODUCTION_DOMAINS, DEVELOPMENT_DOMAINS
+    PRODUCTION_DOMAINS, FRONTEND_PRODUCTION_DOMAINS, DEVELOPMENT_DOMAINS
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-zid9_oc%$_vdjoye3$1n5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['*'] if DEBUG else [DOMAIN, DOMAIN_WITH_WWW, RAILWAY_DOMAIN_PATTERN]
+ALLOWED_HOSTS = ['*'] if DEBUG else PRODUCTION_DOMAINS + [RAILWAY_DOMAIN_PATTERN]
 
 
 # Application definition
