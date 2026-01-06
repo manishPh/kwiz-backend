@@ -131,6 +131,9 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Character encoding
+DEFAULT_CHARSET = 'utf-8'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -176,7 +179,12 @@ if not DEBUG:
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
-    ]
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+    'UNICODE_JSON': True,
+    'STRICT_JSON': False,
 }
 
 # Cache settings for better performance
