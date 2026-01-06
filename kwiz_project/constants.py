@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Application-wide constants for Kwiz backend.
 All hardcoded values should be defined here for easy maintenance.

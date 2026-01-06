@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -155,13 +156,17 @@ def submit_quiz(request):
                      f"Can you beat my score? 🤔\n\n"
                      f"Play now: {quiz_url}")
 
-        return Response({
+        response_data = {
             'score': score,
             'total': total_questions,
             'percentage': percentage,
             'results': results,
             'share_text': share_text
-        })
+        }
+
+        response = Response(response_data)
+        response['Content-Type'] = 'application/json; charset=utf-8'
+        return response
 
     except Exception as e:
         return Response(
