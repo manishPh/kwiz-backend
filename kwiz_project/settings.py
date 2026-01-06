@@ -181,7 +181,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',
+        'quiz.renderers.UTF8JSONRenderer',  # Custom renderer for proper UTF-8 encoding
     ],
     'UNICODE_JSON': True,
     'STRICT_JSON': False,
