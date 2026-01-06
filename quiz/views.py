@@ -12,12 +12,7 @@ from .serializers import (
     ArchiveQuizSerializer
 )
 from kwiz_project.constants import (
-    SCORE_EMOJI_EXCELLENT, SCORE_EMOJI_GREAT, SCORE_EMOJI_GOOD,
-    SCORE_EMOJI_OKAY, SCORE_EMOJI_TRY_AGAIN,
-    SCORE_THRESHOLD_EXCELLENT, SCORE_THRESHOLD_GREAT,
-    SCORE_THRESHOLD_GOOD, SCORE_THRESHOLD_OKAY,
-    QUIZ_DATE_DISPLAY_FORMAT, ERROR_NO_QUIZ_TODAY,
-    DOMAIN_URL
+    ERROR_NO_QUIZ_TODAY
 )
 
 
@@ -129,33 +124,15 @@ def submit_quiz(request):
 
         percentage = round((score / total_questions) * 100) if total_questions > 0 else 0
 
-        # Generate share text with emojis and engagement
-        if percentage >= SCORE_THRESHOLD_EXCELLENT:
-            emoji_score = SCORE_EMOJI_EXCELLENT
-        elif percentage >= SCORE_THRESHOLD_GREAT:
-            emoji_score = SCORE_EMOJI_GREAT
-        elif percentage >= SCORE_THRESHOLD_GOOD:
-            emoji_score = SCORE_EMOJI_GOOD
-        elif percentage >= SCORE_THRESHOLD_OKAY:
-            emoji_score = SCORE_EMOJI_OKAY
-        else:
-            emoji_score = SCORE_EMOJI_TRY_AGAIN
-
-        # Create deep link to the specific quiz
-        quiz_url = f"{DOMAIN_URL}/quiz/{quiz_date.strftime('%Y-%m-%d')}"
-
-        # Use simple date format (emojis work with this)
-        share_text = (f"🎬 Bollywood Kwiz #{quiz_date.strftime(QUIZ_DATE_DISPLAY_FORMAT)} 🎬\n"
-                     f"{emoji_score} {score}/{total_questions} ({percentage}%)\n\n"
-                     f"Can you beat my score? 🤔\n\n"
-                     f"Play now: {quiz_url}")
-
+        # Return data for frontend to format share text
         return Response({
             'score': score,
             'total': total_questions,
             'percentage': percentage,
             'results': results,
-            'share_text': share_text
+            'quiz_date': quiz_date.strftime('%Y-%m-%d'),
+            'quiz_title': quiz.title,
+            'category': quiz.category.name
         })
 
     except Exception as e:
