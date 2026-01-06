@@ -144,7 +144,13 @@ def submit_quiz(request):
         # Create deep link to the specific quiz
         quiz_url = f"{DOMAIN_URL}/quiz/{quiz_date.strftime('%Y-%m-%d')}"
 
-        share_text = (f"🎬 Bollywood Kwiz #{quiz_date.strftime(QUIZ_DATE_DISPLAY_FORMAT)} 🎬\n"
+        # Smart share text: Use title if available, otherwise fallback to date format
+        if quiz.title:
+            first_line = f"🎬 {quiz.title} 🎬"
+        else:
+            first_line = f"🎬 Bollywood Kwiz #{quiz_date.strftime(QUIZ_DATE_DISPLAY_FORMAT)} 🎬"
+
+        share_text = (f"{first_line}\n"
                      f"{emoji_score} {score}/{total_questions} ({percentage}%)\n\n"
                      f"Can you beat my score? 🤔\n\n"
                      f"Play now: {quiz_url}")
