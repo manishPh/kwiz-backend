@@ -16,7 +16,8 @@ from kwiz_project.constants import (
     SCORE_EMOJI_OKAY, SCORE_EMOJI_TRY_AGAIN,
     SCORE_THRESHOLD_EXCELLENT, SCORE_THRESHOLD_GREAT,
     SCORE_THRESHOLD_GOOD, SCORE_THRESHOLD_OKAY,
-    QUIZ_DATE_DISPLAY_FORMAT, ERROR_NO_QUIZ_TODAY
+    QUIZ_DATE_DISPLAY_FORMAT, ERROR_NO_QUIZ_TODAY,
+    DOMAIN_URL
 )
 
 
@@ -140,9 +141,13 @@ def submit_quiz(request):
         else:
             emoji_score = SCORE_EMOJI_TRY_AGAIN
 
+        # Create deep link to the specific quiz
+        quiz_url = f"{DOMAIN_URL}/quiz/{quiz_date.strftime('%Y-%m-%d')}"
+
         share_text = (f"🎬 Bollywood Kwiz #{quiz_date.strftime(QUIZ_DATE_DISPLAY_FORMAT)} 🎬\n"
                      f"{emoji_score} {score}/{total_questions} ({percentage}%)\n\n"
-                     f"Can you beat my score? 🤔")
+                     f"Can you beat my score? 🤔\n\n"
+                     f"Play now: {quiz_url}")
 
         return Response({
             'score': score,
